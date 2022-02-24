@@ -1,0 +1,50 @@
+" lightline: git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
+
+set mouse=a
+set number
+set linebreak
+"set showbreak=+++
+set textwidth=100
+"set showmatch
+ 
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+ 
+set autoindent
+set cindent
+set shiftwidth=4
+set tabstop=4
+set smartindent
+set smarttab
+set softtabstop=4
+
+set ruler
+ 
+set undolevels=1000
+set backspace=indent,eol,start
+
+filetype plugin on
+syntax on
+
+set showmode
+set encoding=utf-8
+set t_Co=256
+filetype indent on
+set wrap
+
+set noerrorbells
+
+set wildmenu
+
+set lazyredraw
+
+set clipboard+=unnamedplus
+
+set laststatus=2
+set noshowmode
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }

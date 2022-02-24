@@ -1,0 +1,12 @@
+#!/bin/sh
+
+setxkbmap de &
+xcompmgr &
+dwm_bar &
+xwallpaper --zoom ~/Bilder/bg.jpg
+
+while true; do
+	dwm >/dev/null 2>&1
+done
+
+exec dwm > /dev/null 2>&1
