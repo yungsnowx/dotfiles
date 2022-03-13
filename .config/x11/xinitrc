@@ -1,9 +1,12 @@
 #!/bin/sh
 
 setxkbmap de &
+display-res &
 xcompmgr &
+dunst &
+unclutter &
 dwm_bar &
-xwallpaper --zoom ~/Bilder/bg.jpg
+xwallpaper --zoom ~/.local/share/bg.jpg &
 
 while true; do
 	dwm >/dev/null 2>&1

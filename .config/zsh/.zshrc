@@ -24,6 +24,8 @@ alias ls='ls -h --color=auto'
 alias ll='ls -lah'
 alias diff='diff --color=auto'
 
+alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 # Autocompletion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select

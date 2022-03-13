@@ -32,6 +32,10 @@ update_bat () {
 	bat="$bat_status $bat_capacity%"
 }
 
+update_temp () {
+	temp="$(curl -s "wttr.in/?format=3" | egrep -o ':.*$' | sed 's/: //')"
+}
+
 update_vol () { 
 	# Dependencies: pamixer
 	vol="$([ "$(pamixer --get-mute)" = "false" ] && printf ' ' || printf ' ')$(pamixer --get-volume)%"
@@ -41,7 +45,7 @@ update_vol () {
 update_vol
 
 display () { 
-	xsetroot -name "[ $bat ] [  $memory ] [ $vol ] $time"
+	xsetroot -name "[ $temp ] [  $memory ] [ $vol ] $time"
 }
 
 # Handling receiving signal
@@ -56,10 +60,11 @@ do
 	sleep 1 &
   wait && { 
 		# to update item ever n seconds with a offset of m
-		## [ $((sec % n)) -eq m ] && udpate_item
+		## [ $((sec % n)) -eq m ] && update_item
 		[ $((sec % 5 )) -eq 0 ] && update_time
 		[ $((sec % 15)) -eq 0 ] && update_memory
-		[ $((sec % 60 )) -eq 0 ] && update_bat
+	#	[ $((sec % 60 )) -eq 0 ] && update_bat
+		[ $((sec % 99 )) -eq 0 ] && update_temp
 
 		# how often the display updates ( 5 seconds )
 		[ $((sec % 5 )) -eq 0 ] && display
