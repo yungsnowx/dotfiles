@@ -3,6 +3,8 @@ compinit
 promptinit
 prompt redhat
 
+PS1="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%~%{$reset_color%}$%b "
+
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
@@ -22,7 +24,6 @@ alias fgrep='fgrep --color=auto'
 alias ip='ip -color=auto'
 alias ls='ls -h --color=auto'
 alias ll='ls -lah'
-alias diff='diff --color=auto'
 
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
@@ -42,4 +43,3 @@ bindkey "^H" backward-delete-word
 
 source $XDG_CONFIG_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/doc/pkgfile/command-not-found.zsh
